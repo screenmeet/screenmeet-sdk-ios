@@ -1,0 +1,5 @@
+.DS_Store
+**/xcuserdata
+docs
+Example/Pods
+Example/Podfile.lock

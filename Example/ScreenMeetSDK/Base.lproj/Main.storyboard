@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ScreenMeetSDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZt-vw-wnc">
+                                <rect key="frame" x="112.5" y="0.0" width="150" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="9i6-JD-5Wo"/>
+                                    <constraint firstAttribute="height" constant="150" id="byB-hX-hoH"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRH-Dz-uDI">
+                                <rect key="frame" x="141.5" y="318.5" width="92" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="start_session"/>
+                                <state key="normal" title="Start Session"/>
+                                <connections>
+                                    <action selector="startSessionButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EUZ-lM-cxf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jl-TU-kBK">
+                                <rect key="frame" x="166.5" y="358.5" width="42" height="30"/>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="pauseButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dTe-Ha-13Z"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="wDY-i2-Ije">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wDY-i2-Ije" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="0DY-Zj-nlg"/>
+                            <constraint firstItem="vRH-Dz-uDI" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="4W7-K7-38l"/>
+                            <constraint firstItem="vRH-Dz-uDI" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="6bf-Cy-TJs"/>
+                            <constraint firstItem="iZt-vw-wnc" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="JMh-0z-B6N"/>
+                            <constraint firstItem="iZt-vw-wnc" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="KQX-u3-mhw"/>
+                            <constraint firstItem="vRH-Dz-uDI" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Mop-u0-fLc"/>
+                            <constraint firstItem="wDY-i2-Ije" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Mqh-R0-Mn4"/>
+                            <constraint firstItem="wDY-i2-Ije" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="R61-Kw-jja"/>
+                            <constraint firstItem="0jl-TU-kBK" firstAttribute="top" secondItem="vRH-Dz-uDI" secondAttribute="bottom" constant="10" id="UaQ-wA-fZN"/>
+                            <constraint firstItem="0jl-TU-kBK" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Zb3-0i-VfM"/>
+                            <constraint firstItem="vRH-Dz-uDI" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="eue-qe-2iT"/>
+                            <constraint firstItem="wDY-i2-Ije" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="fLw-si-NiQ"/>
+                            <constraint firstItem="wDY-i2-Ije" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="r4X-0M-brs"/>
+                            <constraint firstItem="wDY-i2-Ije" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="top-ir-7sm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="iZt-vw-wnc" id="41v-1g-ueh"/>
+                        <outlet property="loadingIndicator" destination="wDY-i2-Ije" id="gtu-2f-8Tq"/>
+                        <outlet property="pauseButton" destination="0jl-TU-kBK" id="ZWW-EW-k1p"/>
+                        <outlet property="startButton" destination="vRH-Dz-uDI" id="vHp-7U-n1Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="131.78410794602701"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
