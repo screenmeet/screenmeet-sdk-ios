@@ -23,8 +23,11 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		E114D7A5249D762C00938BD9 /* ScreenMeetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114D7A4249D762C00938BD9 /* ScreenMeetTests.swift */; };
+		E12A544C2530515E00BDD000 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A544B2530515E00BDD000 /* ScrollViewController.swift */; };
 		E13487B9251A0AE000964EDA /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = E13487B8251A0ADF00964EDA /* giphy.gif */; };
+		E13C1E952565550F00414F7B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13C1E942565550F00414F7B /* WebViewController.swift */; };
 		E13DD1F924A0D1890010CCFD /* MainScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13DD1F824A0D1890010CCFD /* MainScreenUITest.swift */; };
+		E1920EB9255D7E0600C68A62 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1920EB8255D7E0600C68A62 /* ModalViewController.swift */; };
 		F34EB35843435DA07088D2D7 /* Pods_FullExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAB58DED9B37AD0763A3456 /* Pods_FullExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,10 +76,13 @@
 		74C1B5F6911496BDE015C3E2 /* Pods-ScreenMeetSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenMeetSDK_Example.release.xcconfig"; path = "Target Support Files/Pods-ScreenMeetSDK_Example/Pods-ScreenMeetSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		7B89E23D05AA8FCCA6CAE91E /* Pods-ScreenMeetSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenMeetSDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-ScreenMeetSDK_Tests/Pods-ScreenMeetSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E114D7A4249D762C00938BD9 /* ScreenMeetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMeetTests.swift; sourceTree = "<group>"; };
+		E12A544B2530515E00BDD000 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		E13487B8251A0ADF00964EDA /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
+		E13C1E942565550F00414F7B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E13DD1EE24A0CE1D0010CCFD /* ScreenMeetSDK_UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenMeetSDK_UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13DD1F224A0CE1D0010CCFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E13DD1F824A0D1890010CCFD /* MainScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenUITest.swift; sourceTree = "<group>"; };
+		E1920EB8255D7E0600C68A62 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		F20D0E38937782356410903B /* Pods_ScreenMeetSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScreenMeetSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC0EC0D6F76CDDB14766D998 /* Pods-FullExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullExample.debug.xcconfig"; path = "Target Support Files/Pods-FullExample/Pods-FullExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +176,9 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				E13487B8251A0ADF00964EDA /* giphy.gif */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				E12A544B2530515E00BDD000 /* ScrollViewController.swift */,
+				E1920EB8255D7E0600C68A62 /* ModalViewController.swift */,
+				E13C1E942565550F00414F7B /* WebViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -334,7 +343,7 @@
 					};
 					E13DD1ED24A0CE1D0010CCFD = {
 						CreatedOnToolsVersion = 11.5;
-						DevelopmentTeam = 94DN8VFQ8E;
+						DevelopmentTeam = U3AQW9824Q;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -534,6 +543,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				E13C1E952565550F00414F7B /* WebViewController.swift in Sources */,
+				E1920EB9255D7E0600C68A62 /* ModalViewController.swift in Sources */,
+				E12A544C2530515E00BDD000 /* ScrollViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -856,7 +868,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 94DN8VFQ8E;
+				DEVELOPMENT_TEAM = U3AQW9824Q;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ScreenMeetSDK_UITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
@@ -885,7 +897,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94DN8VFQ8E;
+				DEVELOPMENT_TEAM = U3AQW9824Q;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ScreenMeetSDK_UITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;

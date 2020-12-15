@@ -61,6 +61,20 @@ it, simply add the following line to your Podfile:
 pod 'ScreenMeetSDK'
 ```
 
+Also **bitcode** should be disabled. It can be done manualy in xCode, or add the following lines at the end of your pod file
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
+  end
+end
+
+```
+
+
 # Session Lifecycle
 ## Organization Key
 To start work with SDK __organizationKey__ (mobileKey) is required
@@ -240,7 +254,7 @@ ScreenMeet.shared.config.loggingLevel = .debug
 Possible values:
 ```swift
 public enum LogLevel {
-    /// Information that may be helpful, but isnâ€™t essential, for troubleshooting errors
+    /// Information that may be helpful, but isn’t essential, for troubleshooting errors
     case info
     /// Verbose information that may be useful during development or while troubleshooting a specific problem
     case debug

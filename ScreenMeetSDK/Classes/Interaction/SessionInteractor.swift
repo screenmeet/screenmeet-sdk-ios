@@ -58,17 +58,12 @@ class SessionInteractor {
                     Logger.log.debug("REST connection timeout")
                     failure(.connectionTimeout)
                 case .serverError(let code):
-                    if code == 403 {
-                        if let organizationKey = ScreenMeet.shared.config.organizationKey, !organizationKey.isEmpty {
-                            Logger.log.debug("REST incorrect organization key")
-                            failure(.incorrectOrganizationKey)
-                        } else {
-                            Logger.log.debug("REST session already connected")
-                            failure(.sessionAlreadyConnected)
-                        }
-                    } else if let organizationKey = ScreenMeet.shared.config.organizationKey, !organizationKey.isEmpty {
+                    if let organizationKey = ScreenMeet.shared.config.organizationKey, !organizationKey.isEmpty {
                         Logger.log.debug("REST incorrect organization key")
                         failure(.incorrectOrganizationKey)
+                    } else if code == 403 {
+                        Logger.log.debug("REST session already connected")
+                        failure(.sessionAlreadyConnected)
                     } else {
                         Logger.log.debug("REST session not fount")
                         failure(.sessionNotFound)
@@ -133,6 +128,11 @@ class SessionInteractor {
         if let client = ScreenVideoCapturer.webRTCClient?.rtcClient, let capturer = client.lCapturer {
             capturer.sendImageToWebRTC(image: image)
         }
+    }
+    
+    func sendPixelBufferToWebRTC(pixelBuffer: CVImageBuffer) {
+        let capturer = ScreenVideoCapturer.webRTCClient?.rtcClient?.lCapturer
+        capturer?.sendPixelBufferToWebRTC(pixelBuffer: pixelBuffer)
     }
     
     func sendSampleBufferToWebRTC(sampleBuffer: CMSampleBuffer) {

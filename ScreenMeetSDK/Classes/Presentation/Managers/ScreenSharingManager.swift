@@ -8,15 +8,6 @@
 import Foundation
 import ReplayKit
 
-fileprivate extension UIView {
-    
-    var globalRect: CGRect? {
-        guard let origin = self.layer.presentation()?.frame.origin,
-            let globalPoint = self.superview?.layer.presentation()?.convert(origin, to: nil) else { return nil }
-        return CGRect(origin: globalPoint, size: self.frame.size)
-    }
-}
-
 extension UIImage {
     
     convenience init(color: UIColor) {

@@ -178,7 +178,7 @@ extension ScreenMeet {
         }
         
         /// Describes session participant
-        public struct Participant: Identifiable, Equatable {
+        public struct Participant: Equatable {
             
             /// UID of participant
             public var id: String
@@ -378,6 +378,7 @@ extension ScreenMeet {
     }
     
     func joinParticipantEvent(participant: Session.Participant) {
+        self.session?.participants.removeAll(where: { $0.id == participant.id })
         self.session?.participants.append(participant)
         self.sessionEventListeners.onParticipantAction(participant: participant, participantAction: .added)
     }

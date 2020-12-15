@@ -168,10 +168,12 @@ class ViewRouter: ObservableObject, LifecycleListener, SessionEventListener {
     func onStreaming(oldState: ScreenMeet.Session.State, streamingReason: ScreenMeet.Session.State.StreamingReason) {
         isStreaming = "stream"
         self.isConnected = true
+        self.participants.removeAll()
     }
     
     func onInactive(oldState: ScreenMeet.Session.State, inactiveReason: ScreenMeet.Session.State.InactiveReason) {
         isStreaming = "start"
+        self.participants.removeAll()
     }
     
     func onPause(oldState: ScreenMeet.Session.State, pauseReason: ScreenMeet.Session.State.PauseReason) {

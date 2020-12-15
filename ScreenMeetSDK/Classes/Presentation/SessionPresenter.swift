@@ -77,12 +77,12 @@ class SessionPresenter {
             self?.interactor?.startWebRTCStream()
             
             var startWebRTC = true
-            (ScreenMeet.shared.localVideoSource as? AppStreamVideoSource)?.startCapture(success: { (sampleBuffer) in
+            (ScreenMeet.shared.localVideoSource as? AppStreamVideoSource)?.startCapture(success: { (pixelBuffer) in
                 if startWebRTC {
                     startWebRTC = false
                     success()
                 }
-                self?.interactor?.sendSampleBufferToWebRTC(sampleBuffer: sampleBuffer)
+                self?.interactor?.sendPixelBufferToWebRTC(pixelBuffer: pixelBuffer)
             }, failure: {
                 failure(.captureFailed)
             })
@@ -212,12 +212,16 @@ extension SessionPresenter: SessionPresenterOut {
             ScreenMeet.shared.terminateEvent()
             self?.invalidateTimer()
             (ScreenMeet.shared.localVideoSource as? AppStreamVideoSource)?.stopCapture { }
+            self?.stopLaserPointerSession()
+            self?.stopWebRTCStream()
         }
     }
     
     func sessionTerminateLocalEvent() {
-        mainQueue.async {
+        mainQueue.async { [weak self] in
             ScreenMeet.shared.terminatedLocalEvent()
+            self?.stopLaserPointerSession()
+            self?.stopWebRTCStream()
         }
     }
     

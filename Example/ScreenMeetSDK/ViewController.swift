@@ -30,12 +30,20 @@ class ViewController: UIViewController {
         ScreenMeet.shared.registerLifecycleListener(self)
         ScreenMeet.shared.registerSessionEventListener(self)
         
-        ScreenMeet.shared.config.organizationKey = "[INSERT MOBILE API KEY HERE]"
-        
         pauseButton.isHidden = true
         loadingIndicator.isHidden = true
         startButton.setTitle("Start Session", for: .normal)
         pauseButton.setTitle("Pause", for: .normal)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ScreenMeet.shared.localVideoSource.frameProcessor.setConfidential(view: startButton)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        ScreenMeet.shared.localVideoSource.frameProcessor.unsetConfidential(view: startButton)
     }
 
     @IBAction func startSessionButtonTapped(_ sender: Any) {
@@ -48,6 +56,7 @@ class ViewController: UIViewController {
                 ScreenMeet.shared.connect(code: code) { (result) in
                     switch result {
                     case .success(let session):
+                        print("Session owner name: \(session.ownerName ?? "-")")
                         self?.startButton.setTitle("Stop Session", for: .normal)
                         self?.pauseButton.isHidden = false
                     case .failure(let error):

@@ -40,6 +40,15 @@ class ScreenVideoCapturer: RTCScreenVideoCapturer {
         }
     }
     
+    public func sendPixelBufferToWebRTC(pixelBuffer: CVImageBuffer) {
+        let rotation = RTCVideoRotation._0 // Default rotation
+        let rtcPixelBuffer = RTCCVPixelBuffer(pixelBuffer: pixelBuffer)
+        let timeStampNs: Int64 = Int64(Date().timeIntervalSince1970 * 1000000000)
+        let videoFrame = RTCVideoFrame(buffer: rtcPixelBuffer, rotation: rotation, timeStampNs: timeStampNs)
+        delegate?.capturer(self, didCapture: videoFrame)
+        screenmeetWebRtcClient?.onWebRTCFrameSent()
+    }
+    
     public func sendImageToWebRTC(image: CGImage) {
         if (self.delegate != nil) {
             let _rotation = RTCVideoRotation._0 // No rotation on Mac.

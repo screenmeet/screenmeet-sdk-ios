@@ -8,5 +8,5 @@
 # [sudo] gem install jazzy
 #
 
-jazzy --clean --sdk iphoneos -x -workspace,Example/ScreenMeetSDK.xcworkspace,-scheme,ScreenMeetSDK,-arch,arm64 --module ScreenMeetSDK --min-acl public
+jazzy --clean --sdk iphoneos -x -workspace,Example/ScreenMeetSDK.xcworkspace,-scheme,ScreenMeetSDK,-arch,arm64,-CODE_SIGNING_ALLOWED=NO --module ScreenMeetSDK --min-acl public
 

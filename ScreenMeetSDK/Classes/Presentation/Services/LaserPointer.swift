@@ -15,31 +15,20 @@ final class LaserPointer {
     
     private static let laserPointerSize: CGFloat = 20
     
-    private static let laserPointerTapSize: CGFloat = 25
+    private static let laserPointerTapSize: CGFloat = 30
     
     private var laserPointerImage = LaserPointerImageView(frame: CGRect(x: 0, y: 0, width: LaserPointer.laserPointerSize, height: LaserPointer.laserPointerSize))
     
     private var laserPointerTimer: Timer? = nil
     
-    private func rootViewController() -> UIViewController? {
-        var rootViewController = UIApplication.shared.keyWindow?.rootViewController
-        if let navigationController = rootViewController as? UINavigationController {
-            rootViewController = navigationController.viewControllers.first
-        }
-        if let tabBarController = rootViewController as? UITabBarController {
-            rootViewController = tabBarController.selectedViewController
-        }
-        return rootViewController
-    }
-    
     func startLaserPointerSession() {
         if laserPointerTimer == nil {
             self.laserPointerImage.setRounded()
-            laserPointerTimer = Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true) { _ in
-                if let v = self.rootViewController()?.view {
+            laserPointerTimer = Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true) { [unowned self] _ in
+                if let window = UIApplication.shared.keyWindow {
                     self.laserPointerImage.center = CGPoint(x: self.laserPointerCoorX, y: self.laserPointerCoorY)
-                    if v != self.laserPointerImage.superview {
-                        v.addSubview(self.laserPointerImage)
+                    if !laserPointerImage.isDescendant(of: window) {
+                        window.addSubview(self.laserPointerImage)
                     }
                 }
             }
@@ -69,7 +58,7 @@ final class LaserPointer {
 
     func updateLaserPointerCoorsWithTap(_ x: CGFloat, _ y: CGFloat) {
         updateLaserPointerCoors(x, y)
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.4, animations: {
             self.laserPointerImage.frame.size.width = LaserPointer.laserPointerTapSize
             self.laserPointerImage.frame.size.height = LaserPointer.laserPointerTapSize
             self.laserPointerImage.frame.origin.x = self.laserPointerCoorX - LaserPointer.laserPointerTapSize / 2
@@ -77,7 +66,7 @@ final class LaserPointer {
             self.laserPointerImage.layer.backgroundColor = UIColor.red.withAlphaComponent(1).cgColor
             self.laserPointerImage.layoutIfNeeded()
         }) {_ in
-            UIView.animate(withDuration: 0.2, animations: {
+            UIView.animate(withDuration: 0.4, animations: {
                 self.laserPointerImage.frame.size.width = LaserPointer.laserPointerSize
                 self.laserPointerImage.frame.size.height = LaserPointer.laserPointerSize
                 self.laserPointerImage.frame.origin.x = self.laserPointerCoorX - LaserPointer.laserPointerSize / 2
