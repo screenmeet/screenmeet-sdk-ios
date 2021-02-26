@@ -254,7 +254,7 @@ ScreenMeet.shared.config.loggingLevel = .debug
 Possible values:
 ```swift
 public enum LogLevel {
-    /// Information that may be helpful, but isn’t essential, for troubleshooting errors
+    /// Information that may be helpful, but is not essential, for troubleshooting errors
     case info
     /// Verbose information that may be useful during development or while troubleshooting a specific problem
     case debug

@@ -30,6 +30,7 @@ final class LaserPointer {
                     if !laserPointerImage.isDescendant(of: window) {
                         window.addSubview(self.laserPointerImage)
                     }
+                    window.bringSubviewToFront(self.laserPointerImage)
                 }
             }
         } else {

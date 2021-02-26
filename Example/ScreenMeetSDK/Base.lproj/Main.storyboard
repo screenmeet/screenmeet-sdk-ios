@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tcZ-ma-eqT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SqX-QD-oCE">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -505,10 +505,48 @@
             </objects>
             <point key="canvasLocation" x="2834" y="501"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="EOh-h4-WK4">
+            <objects>
+                <tabBarController id="SqX-QD-oCE" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fDU-El-zpp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="tcZ-ma-eqT" kind="relationship" relationship="viewControllers" id="G11-Wy-zlX"/>
+                        <segue destination="zYZ-kR-dPF" kind="relationship" relationship="viewControllers" id="2wt-Fl-fF4"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RPu-2H-fer" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1063" y="501"/>
+        </scene>
+        <!--Secondary-->
+        <scene sceneID="gNB-i6-Pf7">
+            <objects>
+                <viewController id="zYZ-kR-dPF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f47-J6-wSX"/>
+                        <viewControllerLayoutGuide type="bottom" id="jV7-OF-McV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eFQ-sa-sbN">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Secondary" image="archivebox.circle.fill" catalog="system" id="glt-uU-kN8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ef-aH-Qi6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="898"/>
+        </scene>
+        <!--Main-->
         <scene sceneID="hQZ-Q2-UNF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tcZ-ma-eqT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Main" image="tray.circle.fill" catalog="system" id="2zE-qs-Ese"/>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sNu-Bf-9Kv">
@@ -532,10 +570,12 @@
         <image name="3.circle.fill" catalog="system" width="128" height="121"/>
         <image name="4.circle.fill" catalog="system" width="128" height="121"/>
         <image name="5.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="archivebox.circle.fill" catalog="system" width="128" height="121"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="filemenu.and.selection" catalog="system" width="128" height="93"/>
+        <image name="tray.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

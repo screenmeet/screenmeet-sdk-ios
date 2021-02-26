@@ -78,7 +78,7 @@ class AppStreamWebView: NSObject {
         
         webView.evaluateJavaScript(AppStreamWebView.js) { [weak self] (data, error) in
             if let error = error {
-                print("evaluateJavaScriptError", error.localizedDescription, error)
+                Logger.log.error("ScreenMeetSDK: Evaluate Java Script Error: \(error.localizedDescription)")
                 completion([])
                 return
             }
@@ -86,7 +86,6 @@ class AppStreamWebView: NSObject {
             guard let data = data as? [Any],
                   let serializedData = try? JSONSerialization.data(withJSONObject: data),
                   let nodes = try? JSONDecoder().decode([ConfidentialWebNodeModel].self, from: serializedData) else {
-                print("decode")
                 completion([])
                 return
             }
@@ -125,7 +124,7 @@ class AppStreamWebView: NSObject {
         }
     }
     
-    static let selectors: [String] = ["input[type='password']", "[data-cb-mask]", "[data-provider='google']"]
+    static let selectors: [String] = ["input[type='password']", "[data-cb-mask]"]
     
     static let js: String = """
     function uuidv4() {
